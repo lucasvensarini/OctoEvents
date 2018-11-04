@@ -11,12 +11,12 @@ class IssueEventController(@Autowired val issueEventService: IssueEventService) 
 	
 	@PostMapping("/events")
 	fun salvaIssueEvent(@RequestBody issueEvent: IssueEvent) : ResponseEntity<IssueEvent> {
-		return ResponseEntity.status(HttpStatus.CREATED).body(issueEventService.salvaIssueEvent(issueEvent));
+		return ResponseEntity.status(HttpStatus.CREATED).body(issueEventService.salvaIssueEvent(issueEvent))
 	}
 
 	@GetMapping("/{number}/events")
 	fun getIssueEvents(@PathVariable number: Int) : ResponseEntity<List<IssueEvent>> {
-		return ResponseEntity.status(HttpStatus.OK).body(issueEventService.getIssueEvents(number));
+		return ResponseEntity.status(HttpStatus.OK).body(issueEventService.getIssueEvents(number))
 	}
 
 }

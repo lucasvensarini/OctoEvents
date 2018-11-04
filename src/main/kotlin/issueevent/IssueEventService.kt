@@ -25,9 +25,9 @@ class IssueEventService(@Autowired val issueEventRepository: IssueEventRepositor
 	}
 
 	fun getIssueEvents(number: Int) : List<IssueEvent> {
-		val issues = issueEventRepository.findAllByIssueNumber(number)
-		if (!issues.isEmpty()) {
-			return issues
+		val issueEvents = issueEventRepository.findAllByIssueNumber(number)
+		if (!issueEvents.isEmpty()) {
+			return issueEvents
 		}
 		throw NaoEncontradoException("Issue events não encontrados")
 	}
